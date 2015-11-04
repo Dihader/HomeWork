@@ -1,0 +1,5 @@
+D:\Учеба\2015\2 sem\Современные системы программирования\FirstHomeWork\FirstHomeWork\bin\FirstHomeWork.dll
+D:\Учеба\2015\2 sem\Современные системы программирования\FirstHomeWork\FirstHomeWork\bin\FirstHomeWork.pdb
+D:\Учеба\2015\2 sem\Современные системы программирования\FirstHomeWork\FirstHomeWork\obj\Debug\FirstHomeWork.csprojResolveAssemblyReference.cache
+D:\Учеба\2015\2 sem\Современные системы программирования\FirstHomeWork\FirstHomeWork\obj\Debug\FirstHomeWork.dll
+D:\Учеба\2015\2 sem\Современные системы программирования\FirstHomeWork\FirstHomeWork\obj\Debug\FirstHomeWork.pdb
