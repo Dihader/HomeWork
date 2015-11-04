@@ -57,29 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MainWebForm.aspx" />
-    <Content Include="SecondWebForm.aspx" />
     <Content Include="SimplePage.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SecondWebForm.aspx.cs">
-      <DependentUpon>SecondWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SecondWebForm.aspx.designer.cs">
-      <DependentUpon>SecondWebForm.aspx</DependentUpon>
-    </Compile>
     <Content Include="App_code\HelloWorldHandler.cs" />
-    <Compile Include="MainWebForm.aspx.cs">
-      <DependentUpon>MainWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MainWebForm.aspx.designer.cs">
-      <DependentUpon>MainWebForm.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

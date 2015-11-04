@@ -20,7 +20,6 @@ public class HelloWorldHandler : IHttpHandler
         else if (req.HttpMethod == "POST")
         {
             res.Write("<h1>POST</h1>");
-
         }
         else
         {
