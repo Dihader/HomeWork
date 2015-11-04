@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System;
+using System.Collections.Specialized;
 public class HelloWorldHandler : IHttpHandler
 {
     public HelloWorldHandler()
@@ -9,17 +10,21 @@ public class HelloWorldHandler : IHttpHandler
     {
 
         HttpRequest req = context.Request;
-        HttpResponse res = context.Response;
+        HttpResponse res = context.Response;        
        
         res.Write("<html>");
         res.Write("<body>");
         if (req.HttpMethod == "GET")
         {
+     //       string info = req.QueryString["info"].ToString();
             res.Write("<h1>GET</h1>");   
         }
         else if (req.HttpMethod == "POST")
         {
             res.Write("<h1>POST</h1>");
+            NameValueCollection nvc=req.Form;
+            
+            res.Write("<h2>Login:"+nvc["txtPassword"]+"</h2>");
         }
         else
         {

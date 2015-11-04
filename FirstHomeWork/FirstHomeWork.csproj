@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_code\HelloWorldHandler.cs" />
+    <Compile Include="ForExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
