@@ -24,7 +24,8 @@ public class HelloWorldHandler : IHttpHandler
             res.Write("<h1>POST</h1>");
             NameValueCollection nvc=req.Form;
             
-            res.Write("<h2>Login:"+nvc["txtPassword"]+"</h2>");
+            res.Write("<h2>Login:"+nvc["txtLogin"]+"</h2>");
+            res.Write("<h2>Password:" + nvc["txtPassword"] + "</h2>");
         }
         else
         {
