@@ -19,13 +19,8 @@ public class HelloWorldHandler : IHttpHandler
         }
         else if (req.HttpMethod == "POST")
         {
-            string first = req.Form["txtLogin"].ToString() != null ? req.Form["txtLogin"].ToString() : "";
-            string second = req.Form["txtPassword"].ToString() != null ? req.Form["txtPassword"].ToString() : ""; 
-        
             res.Write("<h1>POST</h1>");
 
-            System.Web.HttpContext.Current.Session["Login"] = first;
-            System.Web.HttpContext.Current.Session["Password"] = second;
         }
         else
         {
