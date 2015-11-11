@@ -1,41 +1,32 @@
 ﻿using System.Web;
 using System;
 using System.Collections.Specialized;
-public class HelloWorldHandler : IHttpHandler
+using System.Web.SessionState;
+using FirstHomeWork;
+public class HelloWorldHandler : IHttpHandler,IRequiresSessionState
 {
+    ControllerFactory _controllerFactory;
+    AccountController _accountController;
+
     public HelloWorldHandler()
     {
+        _controllerFactory = new ControllerFactory();
+         _accountController = _controllerFactory.CreateAccountController();
     }
     public void ProcessRequest(HttpContext context)
     {
 
         HttpRequest req = context.Request;
         HttpResponse res = context.Response;        
-       
-        res.Write("<html>");
-        res.Write("<body>");
+        
         if (req.HttpMethod == "GET")
         {
-     //       string info = req.QueryString["info"].ToString();
-            res.Write("<h1>GET</h1>");   
+            _accountController.LogonWithGet(context);
         }
-        else if (req.HttpMethod == "POST")
+        if (req.HttpMethod == "POST")
         {
-            res.Write("<h1>POST</h1>");
-            NameValueCollection nvc=req.Form;
-            
-            res.Write("<h2>Login:"+nvc["txtLogin"]+"</h2>");
-            res.Write("<h2>Password:" + nvc["txtPassword"] + "</h2>");
+           _accountController.LogonWithPost(context);        
         }
-        else
-        {
-            res.Write("<h1>Else work.</h1>");
-        }
-        res.Write("</body>");
-        res.Write("</html>");
-        
-
-
     }
     public bool IsReusable
     {

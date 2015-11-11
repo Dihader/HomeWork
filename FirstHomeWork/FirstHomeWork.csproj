@@ -64,8 +64,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewFactory.cs" />
     <Content Include="App_code\HelloWorldHandler.cs" />
-    <Compile Include="ForExample.cs" />
+    <Compile Include="ControllerFactory.cs" />
+    <Compile Include="LogonBinder.cs" />
+    <Compile Include="AccountController.cs" />
+    <Compile Include="LogonView.cs" />
+    <Compile Include="LogonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
