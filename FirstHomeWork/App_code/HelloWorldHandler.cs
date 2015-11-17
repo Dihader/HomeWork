@@ -3,30 +3,22 @@ using System;
 using System.Collections.Specialized;
 using System.Web.SessionState;
 using FirstHomeWork;
-public class HelloWorldHandler : IHttpHandler,IRequiresSessionState
+
+public class HelloWorldHandler : IHttpHandler, IRequiresSessionState
 {
     ControllerFactory _controllerFactory;
     AccountController _accountController;
+    RouteTable _routeTable;
 
     public HelloWorldHandler()
     {
         _controllerFactory = new ControllerFactory();
-         _accountController = _controllerFactory.CreateAccountController();
+        _accountController = _controllerFactory.CreateAccountController();
     }
     public void ProcessRequest(HttpContext context)
-    {
-
-        HttpRequest req = context.Request;
-        HttpResponse res = context.Response;        
-        
-        if (req.HttpMethod == "GET")
-        {
-            _accountController.LogonWithGet(context);
-        }
-        if (req.HttpMethod == "POST")
-        {
-           _accountController.LogonWithPost(context);        
-        }
+    {       
+        _routeTable = new RouteTable(_controllerFactory);
+        _routeTable.CheckURLAndExecuteMethod(context);
     }
     public bool IsReusable
     {
